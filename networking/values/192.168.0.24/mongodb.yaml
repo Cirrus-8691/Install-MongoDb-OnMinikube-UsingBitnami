@@ -1,0 +1,42 @@
+## https://github.com/bitnami/containers/tree/main/bitnami/mongodb#creating-a-user-and-database-on-first-run
+global:
+  storageClass: "mongodb-storage"
+
+service:
+  ## @param master.service.type service type
+  ##
+  type: LoadBalancer
+  ##
+  ## @param master.service.ports service port
+  ##
+  ports:
+    mongodb: 27017
+  ##
+  ## @param master.service.externalIPs master service External IPs
+  ## https://kubernetes.io/docs/concepts/services-networking/service/#external-ips
+  externalIPs :
+  - 192.168.0.24
+
+persistence:
+  ## @param persistence.size PVC Storage Request for data volume
+  ##
+  size: 2Gi
+  ##
+  ## @param persistence.resourcePolicy Setting it to "keep" to avoid removing PVCs during a helm delete operation. Leaving it empty will delete PVCs after the chart deleted
+  ## WARN: If namespace is deleted you have to free PV with
+  ## WARN:    $kubectl patch pv mongodb-pv-0 -p '{"spec":{"claimRef": null}}'
+  resourcePolicy: "keep"
+
+auth:
+  ## MongoDB(&reg;) custom users and databases
+  ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mongodb#creating-a-user-and-database-on-first-run
+  ## @param auth.usernames List of custom users to be created during the initialization
+  ## @param auth.passwords List of passwords for the custom users set at `auth.usernames`
+  ## @param auth.databases List of custom databases to be created during the initialization
+  ##
+  usernames: 
+    - "usr"
+  passwords: 
+    - "Pwd*175"
+  databases: 
+    - "fred"
