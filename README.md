@@ -103,7 +103,6 @@ Backup database:
 ```bash
 cd networking/mongodb-minikube
 ./backup.sh [projectName] 
-
 ```
 Archive file is copied to '/archive/'
 
@@ -111,7 +110,6 @@ Restore database:
 ```bash
 cd networking/mongodb-minikube
 ./restore.sh [projectName] 
-
 ```
 Last archive files in '/archive/' is restored.
 
@@ -126,7 +124,6 @@ helm -n [projectName]-mongodb uninstall mongodb
 Sample:
 ```bash
 sudo helm -n cirrus-project-mongodb uninstall mongodb
-
 ```
 
 ## Microk8s:
@@ -139,13 +136,11 @@ Backup database:
 ```bash
 cd networking/mongodb-microk8s
 sudo ./backup.sh [projectName] 
-
 ```
 Restore database:
 ```bash
 cd networking/mongodb-microk8s
 sudo ./restore.sh [projectName] 
-
 ```
 Uninstall:
 ```bash
