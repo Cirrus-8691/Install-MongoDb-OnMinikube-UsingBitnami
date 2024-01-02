@@ -54,7 +54,7 @@ else
     if ! [ $? -eq 0 ]; then
 
         echo "✨  Install StorageClass"
-        kubectl apply -f storageclass.yaml
+        kubectl apply -f ../storageclass.yaml
         if ! [ $? -eq 0 ]; then
             echo "${red}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
             echo "┃${white} 🔥FATAL ERROR: Installing $APP_INSTALLED ${bold}${underline}StorageClass${normal}"
@@ -71,7 +71,7 @@ else
             exit 1
         fi
 
-        echo "✨  Create /storage"
+        echo "✨  Creating "$STORAGE_FOLDER
         mkdir $STORAGE_FOLDER
         echo "✨  Creating "$PV_PATH
         mkdir $PV_PATH

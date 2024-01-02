@@ -82,9 +82,10 @@ Please note: pv-name and pv-hostPath are also present in install.sh for their cr
 sudo helm repo add bitnami https://charts.bitnami.com/bitnami
 ```
 
- Run:
+ ## Minikube
+ For install run:
 ```bash
-cd networking/mongodb
+cd networking/mongodb-minikube
 ./install.sh [projectName] [server-ip]
 # where 
 #  - projectName: is the name of the project for witch Mongodb is installed
@@ -94,27 +95,28 @@ cd networking/mongodb
 Warning, if Minikube was started as super user, you have to use sudo.
 Sample:
 ```bash
-cd networking/mongodb
+cd networking/mongodb-minikube
 sudo ./install.sh cirrus-project 192.168.0.24
 ```
-# Backup database
+
+Backup database:
 ```bash
-cd networking/mongodb
+cd networking/mongodb-minikube
 ./backup.sh [projectName] 
 
 ```
 Archive file is copied to '/archive/'
 
-# Restore database
+Restore database:
 ```bash
-cd networking/mongodb
+cd networking/mongodb-minikube
 ./restore.sh [projectName] 
 
 ```
 Last archive files in '/archive/' is restored.
 
 
-# Uninstall
+Uninstall:
 ```bash
 helm -n [projectName]-mongodb uninstall mongodb
 # where 
@@ -125,4 +127,27 @@ Sample:
 ```bash
 sudo helm -n cirrus-project-mongodb uninstall mongodb
 
+```
+
+## Microk8s:
+For install run:
+```bash
+cd networking/postgresql-microk8s
+./install.sh [projectName] [server-ip]
+```
+Backup database:
+```bash
+cd networking/mongodb-microk8s
+./backup.sh [projectName] 
+
+```
+Restore database:
+```bash
+cd networking/mongodb-microk8s
+./restore.sh [projectName] 
+
+```
+Uninstall:
+```bash
+microk8s helm -n [projectName]-postgresql uninstall postgresql
 ```
