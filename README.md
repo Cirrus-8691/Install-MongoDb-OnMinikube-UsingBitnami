@@ -133,21 +133,21 @@ sudo helm -n cirrus-project-mongodb uninstall mongodb
 For install run:
 ```bash
 cd networking/postgresql-microk8s
-./install.sh [projectName] [server-ip]
+sudo ./install.sh [projectName] [server-ip]
 ```
 Backup database:
 ```bash
 cd networking/mongodb-microk8s
-./backup.sh [projectName] 
+sudo ./backup.sh [projectName] 
 
 ```
 Restore database:
 ```bash
 cd networking/mongodb-microk8s
-./restore.sh [projectName] 
+sudo ./restore.sh [projectName] 
 
 ```
 Uninstall:
 ```bash
-microk8s helm -n [projectName]-postgresql uninstall postgresql
+sudo microk8s helm -n [projectName]-postgresql uninstall postgresql
 ```
