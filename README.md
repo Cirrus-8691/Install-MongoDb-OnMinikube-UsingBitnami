@@ -77,6 +77,11 @@ Please note: pv-name and pv-hostPath are also present in install.sh for their cr
 
 # How to install
 
+```bash
+#Add bitnami repo only once
+sudo helm repo add bitnami https://charts.bitnami.com/bitnami
+```
+
  Run:
 ```bash
 cd networking/mongodb
