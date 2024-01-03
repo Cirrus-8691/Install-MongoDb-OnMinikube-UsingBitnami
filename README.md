@@ -27,7 +27,7 @@
 </p>
 
 
-# In Minikube or MicroK8s
+# In Minikube or Microk8s environment
 
 <p align="center">
 <img
@@ -83,7 +83,7 @@ Please note: pv-name and pv-hostPath are also present in install.sh for their cr
 sudo helm repo add bitnami https://charts.bitnami.com/bitnami
 ```
 
- ## Minikube
+ ## In Minikube
  For install run:
 ```bash
 cd networking/mongodb-minikube
@@ -127,7 +127,7 @@ Sample:
 sudo helm -n cirrus-project-mongodb uninstall mongodb
 ```
 
-## Microk8s:
+## In Microk8s:
 For install run:
 ```bash
 cd networking/postgresql-microk8s
