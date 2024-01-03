@@ -27,7 +27,7 @@
 </p>
 
 
-# In Minikube Kubernetes
+# In Minikube or MicroK8s
 
 <p align="center">
 <img
@@ -41,6 +41,7 @@
     height="128"
 />
 </p>
+In a single MicroK8s node.
 
 # Using bitnami/postgresql helm chart
 
