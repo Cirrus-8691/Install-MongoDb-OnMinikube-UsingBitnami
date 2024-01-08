@@ -19,7 +19,6 @@ APP_INSTALLED="MongoDb"
 PACKAGE_NAME="mongodb"
 NAMESPACE="$PROJECT_NAME-$PACKAGE_NAME"
 
-# Check "pv-prestgresql.yaml"
 STORAGE_FOLDER="/storage"
 PV_NAME=$PACKAGE_NAME"-pv-0"
 PV_PATH=$STORAGE_FOLDER"/data-"$PV_NAME
